@@ -3,6 +3,7 @@ import { container } from 'tsyringe';
 
 import CreateUserService from '@modules/users/services/CreateUserService';
 import FindUsersService from '@modules/users/services/FindUsersService';
+import { classToClass } from 'class-transformer';
 
 export default class UsersController {
   public async create(req: Request, res: Response): Promise<Response> {
@@ -16,7 +17,7 @@ export default class UsersController {
       password,
     });
 
-    return res.json(user);
+    return res.json(classToClass(user));
   }
 
   public async index(req: Request, res: Response): Promise<Response> {

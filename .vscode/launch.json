@@ -7,14 +7,11 @@
     {
       "type": "node",
       "request": "attach",
-      "protocol": "inspector",
+      "name": "Docker: Attach to Node",
       "restart": true,
-      "name": "Debug",
       "skipFiles": [
-        "<node_internals>/**"
-      ],
-      "outFiles": [
-        "${workspaceFolder}/**/*.js"
+        "node_modules/**/*.js",
+        "<node_internals>/**/*.js"
       ]
     }
   ]
